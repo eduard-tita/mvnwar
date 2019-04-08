@@ -1,14 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Build and Deploy - snapshot') {
             steps {
-                sh 'mvn --batch-mode -V -U clean verify'
-            }
-        }
-        stage('Deploy-snapshot') {
-            steps {
-                sh 'mvn --batch-mode -V -U deploy'
+                sh 'mvn --batch-mode -V -U clean deploy'
             }
         }
     }
