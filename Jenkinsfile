@@ -7,7 +7,6 @@ pipeline {
         //nexusPolicyEvaluation failBuildOnNetworkError: false, iqApplication: selectedApplication('et-hw'), iqStage: 'build', jobCredentialsId: ''
       }
     }
-    /*
     stage('Deploy-release') {
       steps {
         def project.version='1.3'
@@ -18,7 +17,6 @@ pipeline {
         nexusPublisher nexusInstanceId: 'local-nexus-3', nexusRepositoryId: 'et-maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: "/home/eduard/.jenkins/workspace/Mvnwar Release/target/mvnwar-${projectVersion}.war"]], mavenCoordinate: [artifactId: 'mvnwar', groupId: 'ca.oscinc.mvnweb', packaging: 'war', version: "${projectVersion}"]]]
       }
     }
-    */
   }
 }
 
