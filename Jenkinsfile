@@ -1,6 +1,6 @@
 pipeline {
   environment {
-     project.version = sh 'mvn -Dexec.executable='echo' -Dexec.args='${project.version}' --non-recursive exec:exec -q'
+     project.version = '1.3'
   }
   agent any
   stages {
@@ -15,7 +15,7 @@ pipeline {
     /*
     stage('Deploy-release') {
       steps {
-        nexusPublisher nexusInstanceId: 'local-nexus-3', nexusRepositoryId: 'et-maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/home/eduard/.jenkins/workspace/Mvnwar Release/target/mvnwar-1.3.war']], mavenCoordinate: [artifactId: 'mvnwar', groupId: 'ca.oscinc.mvnweb', packaging: 'war', version: '1.3']]]
+        nexusPublisher nexusInstanceId: 'local-nexus-3', nexusRepositoryId: 'et-maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: "/home/eduard/.jenkins/workspace/Mvnwar Release/target/mvnwar-${project.version}.war"]], mavenCoordinate: [artifactId: 'mvnwar', groupId: 'ca.oscinc.mvnweb', packaging: 'war', version: "${project.version}"]]]
         nexusPolicyEvaluation failBuildOnNetworkError: false, iqApplication: selectedApplication('et-hw'), iqStage: 'release', jobCredentialsId: ''
       }
     }
