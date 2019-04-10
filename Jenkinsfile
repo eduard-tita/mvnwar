@@ -6,6 +6,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        echo 'git commit: ${GIT_COMMIT}'
         sh 'mvn -V -U clean verify'
         nexusPolicyEvaluation failBuildOnNetworkError: false, iqApplication: selectedApplication('et-hw'), iqStage: 'build', jobCredentialsId: ''
       }
