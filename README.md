@@ -1,3 +1,3 @@
 # mvnwar
 
-[![DepShield Badge](https://depshield.sonatype.org/badges/owner/repository/depshield.svg)](https://depshield.github.io)
+[![DepShield Badge](https://depshield.sonatype.org/badges/eduard-tita/mvnwar/depshield.svg)](https://depshield.github.io)
